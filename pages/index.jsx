@@ -5,11 +5,11 @@ import {expABI, expContractAddress,abi,contractAddress} from "../constants/const
 import {NFTCard, App, LoadStats, GetEXPBalance} from "./components/nftCard"
 
 import dynamic from 'next/dynamic';
-import Web3 from 'web3';
+//import web3 from 'web3';
 
 
 import React, { useState, useEffect } from "react";
-const WEB3 = dynamic(()=>{return import("web3")}, {ssr:false})
+//const WEB3 = dynamic(()=>{return import("web3")}, {ssr:false})
 
 const Home = () => {
 
