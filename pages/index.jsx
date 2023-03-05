@@ -12,6 +12,23 @@ import React, { useState, useEffect } from "react";
 //const WEB3 = dynamic(()=>{return import("web3")}, {ssr:false})
 
 const Home = () => {
+  const connectWallet = async () => {
+    if (!window.ethereum) {
+      alert('please install MetaMask');
+      return;
+    }
+    try {
+      await window.ethereum.request({ method: 'eth_requestAccounts' });
+  
+      const provider =  new ethers.providers.Web3Provider(window.ethereum);
+      const signer = provider.getSigner();
+      const address = await signer.getAddress();
+  
+      console.log('address', address)
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
 
     const mint = async () =>{
@@ -109,7 +126,9 @@ const Home = () => {
     
     <div className="flex flex-col items-center justify-center py-8 gap-y-3 bg-gd-welcome "  >
       <div className="flex flex-col w-full justify-center items-center gap-y-2 bg-gd-welcome">
-      
+      <div class="inline-flex rounded-md shadow-sm" role="group">
+        <button ctype="button" class="px-4 py-2 text-sm font-medium text-gray-900 bg-transparent border border-gray-900  hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700" onClick={connectWallet}>Connect Wallet</button>
+       </div>
         {/* <input className="w-2/5 bg-slate-100 py-2 px-2 rounded-lg text-gray-800 focus:outline-blue-300 disabled:bg-slate-50 disabled:text-gray-50" onChange={(e)=>{setCollectionAddress(e.target.value)}} value={collection} type={"text"} placeholder="Add the collection address"></input> */}
         {/* <label className="text-gray-600 "><input onChange={(e)=>{setFetchForCollection(e.target.checked)}} type={"checkbox"} className="mr-2"></input>Fetch for collection</label> */}
         {/* <button className={"py-5 px-5 bg-blue-500 w-44 text-center rounded-md text-white cursor-pointer hover:bg-[#2546bd] white-glassmorphism"} onClick={ async () =>{ await onInit()}}>use me</button> */}
