@@ -5,7 +5,7 @@ import {expABI, expContractAddress,abi,contractAddress} from "../constants/const
 import {NFTCard, App, LoadStats, GetEXPBalance} from "./components/nftCard"
 
 import dynamic from 'next/dynamic';
-//import web3 from 'web3';
+import Web3 from 'web3';
 
 
 import React, { useState, useEffect } from "react";
