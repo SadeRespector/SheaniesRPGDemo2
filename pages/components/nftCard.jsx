@@ -1673,7 +1673,7 @@ const expABI = [
 	}
 ]
 //import {contractAddress, abi, battlerABI, battlerContract, expABI,expContractAddress} from "/constants/constants.js"
-import Web3 from "web3";
+//import Web3 from "web3";
 import { useState, useEffect } from 'react'
 
 import {ethers} from 'ethers'
