@@ -1,7 +1,7 @@
 import '../styles/globals.css';
 
 import type { AppProps } from 'next/app';
-import { NFTCard, App } from './components/nftCard';
+import { NFTCard} from './components/nftCard';
 
 
 import "./index.css";

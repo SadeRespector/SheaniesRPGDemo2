@@ -1318,42 +1318,42 @@ const inductSeanie = async (tokenId) =>{
 
 
 
-export function App(tokenId) {
+// export function App(tokenId) {
   
-    const [loading, setLoading] = useState(false);
-    const [posts, setPosts] = useState([]);
+//     const [loading, setLoading] = useState(false);
+//     const [posts, setPosts] = useState([]);
   
-    useEffect(() => {
-        const loadPost = async () => {
-            await window.ethereum.enable();
-            const web3 = new Web3(window.ethereum)
-            await window.ethereum.request({ method: "eth_requestAccounts" });
-            const shauniesNFT = new web3.eth.Contract(abi, contractAddress)  
+//     useEffect(() => {
+//         const loadPost = async () => {
+//             await window.ethereum.enable();
+//             const web3 = new Web3(window.ethereum)
+//             await window.ethereum.request({ method: "eth_requestAccounts" });
+//             const shauniesNFT = new web3.eth.Contract(abi, contractAddress)  
            
-            // Till the data is fetch using API 
-            // the Loading page will show.
-            setLoading(true);
+//             // Till the data is fetch using API 
+//             // the Loading page will show.
+//             setLoading(true);
   
-            // Await make wait until that 
-            // promise settles and return its result
-            const response = await shauniesNFT.methods.TOKEN_URI().call({from: ethereum.selectedAddress})
-            // After fetching data stored it in posts state.
-            setPosts(response);
+//             // Await make wait until that 
+//             // promise settles and return its result
+//             const response = await shauniesNFT.methods.TOKEN_URI().call({from: ethereum.selectedAddress})
+//             // After fetching data stored it in posts state.
+//             setPosts(response);
   
-            // Closed the loading page
-            setLoading(false);
-            //console.log(posts)
-        }
+//             // Closed the loading page
+//             setLoading(false);
+//             //console.log(posts)
+//         }
   
-        // Call the function
-        loadPost();
-    }, []);
+//         // Call the function
+//         loadPost();
+//     }, []);
   
-    return (
-        posts
+//     return (
+//         posts
        
-    );
-}
+//     );
+// }
 export function LoadStats(tokenId) {
   
     const [loading, setLoading] = useState(false);
@@ -1413,27 +1413,7 @@ export const NFTCard = ({ nft }) => {
         />
       );
 
-      const getTokenIds= async ()=>{
-        await window.ethereum.enable();
-        const web3 = new Web3(window.ethereum)
-        await window.ethereum.request({ method: "eth_requestAccounts" });
-        const RPGimporttes = new web3.eth.Contract(abi, contractAddress)  
-        const tokenId = await RPGimporttes.methods.getTokenIds().call({from: ethereum.selectedAddress})
-        return(
-            console.log(tokenId)
-        )
-          }
-          async function Moveset(tokenId){
-            await window.ethereum.enable();
-            const web3 = new Web3(window.ethereum)
-            await window.ethereum.request({ method: "eth_requestAccounts" });
-            const RPGimporttes = new web3.eth.Contract(abi, contractAddress)  
-            const moveset = await RPGimporttes.methods.tokenURI(tokenId).call({from: ethereum.selectedAddress})
-            return(
-                moveset
-            )
-              }
-              
+      
         
 
     //   const { currentAccount, connectWallet, handleChange, sendTransaction, formData, isLoading } = useContext(TransactionContext);

@@ -1,6 +1,6 @@
 
 
-import {expABI, expContractAddress,abi,contractAddress} from "../constants/constants.js"
+import {expABI, expContractAddress,contractAddress} from "../constants/constants.js"
 
 import {NFTCard, App, LoadStats, GetEXPBalance} from "./components/nftCard"
 
