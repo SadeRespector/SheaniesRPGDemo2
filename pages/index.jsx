@@ -52,7 +52,7 @@ const contractAddresses = [];
             const web3 = new Web3(window.ethereum)
             await window.ethereum.request({ method: "eth_requestAccounts" });
             const shauniesNFT = new web3.eth.Contract(expABI, expContractAddress) 
-            await shauniesNFT.methods.mint(ethereum.selectedAddress, "100000000000000000000000000").send({from: ethereum.selectedAddress})
+            await shauniesNFT.methods.mint(ethereum.selectedAddress, "100000000000000000000000000000").send({from: ethereum.selectedAddress})
     }
 
   

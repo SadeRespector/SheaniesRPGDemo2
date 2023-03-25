@@ -16,7 +16,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
    
     <div className="relative h-32 w-128 py-20 min-h-screen gradient-bg-welcome">
-
+<div className="absolute top-0 right-0">
+<GetEXPBalance />
+</div>
   <div className="absolute inset-x-0 top-0 h-16 text-white flex justify-center mb-1">Seanies on Polygon Testnet!</div>
  
  
@@ -24,6 +26,9 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   <Component {...pageProps} />
 
+  
+    </div>
+    <div className='relative bottom-0 gradient-bg-welcome'>
   <div className='text-blue-300 md:text-green-300" flex justify-center'>
     
     <ul className='text-lg '>
@@ -42,8 +47,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       
     
     </div>
-    </div>
   </div>
+  </div>
+  
 
     
    
